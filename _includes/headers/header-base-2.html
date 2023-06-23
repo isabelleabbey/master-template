@@ -1,0 +1,55 @@
+<!-- header with two layers -->
+
+<!-- logo layer -->
+<section class="grid lg:grid-cols-3 border-b border-black bg-white z-index-fun">
+
+  <div class="hidden lg:flex justify-start items-start">
+    <nav class="flex-row p-5 text-nav">
+
+      <a href="https://www.instagram.com/{{site.data.site-settings.socials.instagram_username}}"> instagram  &nbsp;&nbsp; |  &nbsp; &nbsp;&nbsp;</a>
+      <a href="/contact" > contact </a>
+
+    </nav>
+  </div>
+  
+  <div class="flex items-start justify-start md:justify-center md:items-center">
+      <a href="/"><img class="w-1/2 md:w-1/4 lg:w-1/2 object-contain object-center md:m-auto" src="/images/brand_logo.png"></a>
+  </div>
+  
+  <div class="hidden lg:flex item-right justify-end ">
+      <nav class="flex text-nav p-5 ">
+
+        <a href="#" class=""> subscribe  &nbsp;&nbsp; |  &nbsp; &nbsp;&nbsp;</a>
+        <a href="/search.html" class="p-x">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 "> <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+           </svg>
+        </a>
+
+    </nav>
+  </div>
+
+ </section>
+
+<!-- nav layer -->
+<section class="m-auto  border-b border-black relative ">
+
+  <div class="hidden md:grid md:grid-cols-1">
+  
+    <div class="text-center grid min-h-[5vh]">
+      <nav class="nav-items ">
+  
+        {% for item in site.data.navigation.header %}
+        <span href="#"  class=" relative grid"> 
+      
+           <a> {{item.nav_title}} </a>
+ 
+        </span>
+  
+        {% endfor %}
+  
+      </nav>
+    </div>
+  
+  </div>
+
+</section>
