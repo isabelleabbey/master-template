@@ -1,0 +1,31 @@
+<!------------------------- Add to front matter ----------------------->
+<!-- expandable:
+ - question: Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo perspiciatis praesentium reprehenderit explicabo voluptatibus. Repellendus ea fuga similique fugit ullam ducimus numquam rerum quibusdam saepe, culpa doloremque officia adipisci dolore?
+   answer: Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fuga optio, eaque dignissimos corrupti nihil beatae possimus sunt officiis minima minus ex placeat illum, maiores architecto commodi obcaecati, odio error deleniti!
+ - question: Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo perspiciatis praesentium reprehenderit explicabo voluptatibus. Repellendus ea fuga similique fugit ullam ducimus numquam rerum quibusdam saepe, culpa doloremque officia adipisci dolore?
+   answer: Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fuga optio, eaque dignissimos corrupti nihil beatae possimus sunt officiis minima minus ex placeat illum, maiores architecto commodi obcaecati, odio error deleniti! -->
+
+
+    <!-- HTML for appearing expandable -->
+
+    <div class="md:p-20 p-10">
+
+        <div id="accordion-collapse" data-accordion="collapse">
+            {% for item in page.expandable %}
+            <h2 id="accordion-collapse-heading-{{ forloop.index }}" class="p-10">
+            <button type="button" class="flex items-center justify-between w-full" data-accordion-target="#accordion-collapse-body-{{ forloop.index }}" aria-expanded="false" aria-controls="accordion-collapse-body-{{ forloop.index }}">
+                <span class="sans-heading pt-6 pb-4">{{item.question}}</span>
+            </button>
+            </h2>
+        </div>
+
+        <div id="accordion-collapse-body-{{ forloop.index }}" class="hidden" aria-labelledby="accordion-collapse-heading-{{ forloop.index }}">
+            <div class="p-10">
+                <p>{{item.answer}}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+<!-- Flobite scripts -->
+<script src="https://unpkg.com/flowbite@1.5.1/dist/flowbite.js" defer></script>    

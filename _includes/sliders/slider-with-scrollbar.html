@@ -1,0 +1,96 @@
+<!------------------------- Add to front matter ----------------------->
+<!-- slider-items:
+ - title:
+   price:
+   url:
+   image:
+ - title:
+   price:
+   url:
+   image:
+ - title:
+   price:
+   url:
+   image:
+ - title:
+   price:
+   url:
+   image:     -->
+
+<!-- Scripts -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+
+<!-- Slider main container -->
+<div class="swiper">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+      <!-- Slides -->
+      {% for item in page.slider-items %}
+      <div class="swiper-slide">
+          <div class="content px-10">
+              <div class="bg-center bg-contain bg-no-repeat lg:h-[40vh] aspect-portrait" style="background-image:url('{{item.image}}')">
+              </div>
+              <h4 class="mt-6 mb-4">{{item.title}}</h4>
+              <p class="mb-4">{{item.price}}</p>
+              <a href="{{item.url}}" class="btn">Shop Now</a>
+          </div>
+      </div>
+      {% endfor %}
+    </div>
+  
+    <!-- Scrollbar, sits outside swiper container -->
+    <div class="swiper-scrollbar"></div>
+  </div>
+</div>
+</section>
+
+
+
+<style>
+.swiper {
+    max-width: 100%;
+    margin: 0 auto;
+    height: 100%;
+}
+
+.swiper-wrapper {
+    width: 100%;
+    height: 100%;
+}
+
+.content {
+    padding-bottom: 3rem;
+}
+
+</style>
+
+
+  <script>
+    var swiper = new Swiper(".swiper", {
+      slidesPerView: 1,
+      spaceBetween: 10,
+      direction: 'horizontal',
+      loop: false,
+      scrollbar: {
+    el: '.swiper-scrollbar',
+    clickable: true,
+    draggable:true
+  },
+  breakpoints: {
+        640: {
+          slidesPerView: 2,
+          spaceBetween: 10,
+        },
+        768: {
+          slidesPerView: 3,
+          spaceBetween: 20,
+        },
+        1024: {
+          slidesPerView: 4,
+          spaceBetween: 30,
+        },
+      },
+    });
+  </script>
