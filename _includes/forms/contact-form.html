@@ -1,0 +1,60 @@
+<form class="grid grid-cols-2" action="https://formspree.io/f/" method="POST">
+    <div class="md:col-span-1 col-span-full">
+    <input type="text" name="name" placeholder="First Name*" required />
+    </div>
+    <div class="md:col-span-1 col-span-full">
+    <input type="text" name="surname" placeholder="Surname*" required />
+    </div>
+    <div class="md:col-span-1 col-span-full">
+    <input type="email" name="_replyto" placeholder="Email*" required />
+    </div>
+    <div class="md:col-span-1 col-span-full">
+    <input type="tel" name="phone" placeholder="Phone" />
+    </div>
+    <div class="col-span-2">
+        <input type="text" name="subject" placeholder="Subject of Enquiry" />
+    </div>
+    <div class="col-span-2 row-span-2">
+    <textarea type="text" name="Message" placeholder="Your Message*" required></textarea>
+    <input type="submit" value="Submit" class="submit-button mt-2" />
+    </div>
+</form>
+
+
+<style>
+
+    /* add custom font and size below for input and text area */
+    input,
+    textarea {
+      font-family: sans-serif;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      border-style: solid;
+      border: 1px solid black;
+      padding: 0.9rem;
+      display: block;
+      width: 100%;
+     }
+    
+     /* add custom font for placeholder text below */
+     input [type="placeholder"]  {
+      font-family: sans-serif;
+    }
+    
+    input:focus,
+    textarea:focus {
+      outline: none;
+      border: 2px solid black;
+    }
+    
+    textarea { min-height: 7rem; }
+    
+    input[type="submit"] {
+      width: 100%;
+      display: block;
+      -webkit-appearance: none;
+    }
+    
+    form [class*=col-] { padding: 5px; }
+    
+</style>
