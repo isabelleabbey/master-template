@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--------------------- SEO Metadata ----------------------->
+    <title>
+        {{ page.title | default: site.data.default-seo.title }}
+      </title>
+      <meta name="description" content="{{ page.seo.meta-description | default: site.data.default-seo.meta-description }}">
+      <meta name="keywords" content="{{ page.seo.keywords | default: site.data.default-seo.keywords }}">
+
+    {% if page.seo.hide-from-google == true %}
+        <meta name="robots" content="noindex, nofollow">
+    {% else %}
+        <meta name="robots" content="index, follow">
+    {% endif %}
+
+        <!-- Metadata for favicon files -->
+
+    
+        <!-- Meta for social sharing -->
+        <meta property="og:title" content="{{ page.title | default: site.data.default-seo.title }}">
+        <meta property="og:type" content="{{ page.type | default: site.data.default-seo.type }}">
+        <meta property="og:description" content="{{ page.seo.meta-description | default: site.data.default-seo.meta-description }}"> 
+        <meta property="og:image" content="{{ page.seo.social_image | default: site.data.default-seo.social_image }}">
+        <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+        <meta name="twitter:card" content="{{ page.seo.twitter_card | default: site.data.default-seo.twitter_card }}">
+        <meta name="twitter:description" content=" {{ page.seo.twitter_description | default: site.data.default-seo.twitter_description}} ">
+        <meta name="og:site_name" content="{{ site.data.default-seo.site_name }}">
+
+        <!-- Font Awesome Version 5 for Icons  -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
+
+        <!-- Font Awesome Version 6 for icons -->
+        <script src="https://kit.fontawesome.com/5ecc7ac9fc.js" crossorigin="anonymous"></script>
+
+        <!-- Custom stylesheet -->
+        <link rel="stylesheet" href="{{ '/dist/main.css' | relative_url }}">
+</head>
+
+
+<body>
+    {{content}}
+</body>
+
+  <!-- Add jQuery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
+
+
+  <!-- Custom javascript style -->
+  <script src="/javascript/scripts.js" defer></script>
+
+</html>

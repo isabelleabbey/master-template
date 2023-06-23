@@ -1,0 +1,15 @@
+_inputs:
+  layout:
+    hidden: true
+
+_inputs:
+   seo:
+    meta-description:
+      comment: >-
+          This will be the short snippet shown on Google below the page title to entice readers to click. Aim for between 120 and 158 characters. Use a CTA and ensure each page has a unique description.
+    keywords:
+      comment: >-
+          Not currently used as part of Google's search engine ranking, so place less focus on these. We recommend using 6-10 keywords per page. Make them different if possible.
+    social_image:
+      comment: >-
+          Should be at least 1080 pixels in width. This image will appear in Facebook post previews for your page or post.      

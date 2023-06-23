@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Example of Extracting classes with @apply https://tailwindcss.com/docs/reusing-styles#extracting-classes-with-apply */
+
+@layer components {
+    .font-italic {
+      @apply italic
+    }
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply font-sans text-white font-light overflow-x-hidden w-[100vw] bg-main;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+      @apply font-serif font-light;
+  }
+
+  a {
+    @apply font-sans
+  }
