@@ -1,7 +1,7 @@
 <header class="grid grid-cols-3 bg-main border-b border-green relative">
 
-  <div class="hidden lg:flex items-center justify-center justify-between">
-      <nav class="hidden lg:flex md:flex-row md:justify-center items-center">
+  <div class="hidden md:flex">
+      <nav class="hidden md:flex justify-center items-center">
           {% for item in site.data.navigation.header limit:2 %}
           <a href="{{item.nav_url}}" class="nav-items">{{item.nav_title}}</a>
           {% endfor %}
