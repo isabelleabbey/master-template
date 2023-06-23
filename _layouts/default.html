@@ -8,48 +8,77 @@
 
     <!--------------------- SEO Metadata ----------------------->
     <title>
-        {{ page.title | default: site.data.default-seo.title }}
+        {{ page.title | default: site.data.site-settings.seo.title }}
       </title>
-      <meta name="description" content="{{ page.seo.meta-description | default: site.data.default-seo.meta-description }}">
-      <meta name="keywords" content="{{ page.seo.keywords | default: site.data.default-seo.keywords }}">
+      <meta name="description" content="{{ page.seo.meta-description | default: site.data.site-settings.seo.meta-description }}">
+      <meta name="keywords" content="{{ page.seo.keywords | default: site.data.site-settings.seo.keywords }}">
 
-    {% if page.seo.hide-from-google == true %}
-        <meta name="robots" content="noindex, nofollow">
-    {% else %}
-        <meta name="robots" content="index, follow">
-    {% endif %}
+      {% if page.seo.hide-from-google == true %}
+          <meta name="robots" content="noindex, nofollow">
+      {% else %}
+          <meta name="robots" content="index, follow">
+      {% endif %}
 
-        <!-- Metadata for favicon files -->
-
+    <!--------------------- Meta for social sharing ----------------------->
+      <meta property="og:title" content="{{ page.title | default: site.data.site-settings.seo.title }}">
+      <meta property="og:type" content="{{ page.title | default: site.data.site-settings.seo.type }}">
+      <meta property="og:description" content="{{ page.seo.description | default: site.data.site-settings.seo.description }}"> 
+      <meta property="og:image" content="{{ page.seo.social_image | default: site.data.site-settings.seo.social_image }}">
+      <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+      <meta name="twitter:card" content="{{ page.seo.twitter_card | default: site.data.site-settings.seo.twitter_card }}">
+      <meta name="twitter:description" content=" {{ page.seo.twitter_description | default: site.data.site-settings.seo.twitter_description}} ">
+      <meta name="og:site_name" content="{{ site.data.site-settings.seo.site_name }}">
     
-        <!-- Meta for social sharing -->
-        <meta property="og:title" content="{{ page.title | default: site.data.default-seo.title }}">
-        <meta property="og:type" content="{{ page.type | default: site.data.default-seo.type }}">
-        <meta property="og:description" content="{{ page.seo.meta-description | default: site.data.default-seo.meta-description }}"> 
-        <meta property="og:image" content="{{ page.seo.social_image | default: site.data.default-seo.social_image }}">
-        <meta property="og:url" content="{{ site.url }}{{ page.url }}">
-        <meta name="twitter:card" content="{{ page.seo.twitter_card | default: site.data.default-seo.twitter_card }}">
-        <meta name="twitter:description" content=" {{ page.seo.twitter_description | default: site.data.default-seo.twitter_description}} ">
-        <meta name="og:site_name" content="{{ site.data.default-seo.site_name }}">
+    <!--------------------- Project Specific Code for Head ----------------------->
 
-        <!-- Font Awesome Version 5 for Icons  -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
+    {% include default/head-includes.html %}
 
-        <!-- Font Awesome Version 6 for icons -->
-        <script src="https://kit.fontawesome.com/5ecc7ac9fc.js" crossorigin="anonymous"></script>
+    <!--------------------- Google Analytic ----------------------->
 
-        <!-- Custom stylesheet -->
-        <link rel="stylesheet" href="{{ '/dist/main.css' | relative_url }}">
-</head>
+    {{site.data.site-settings.technical.google-analytics_embed}}
+
+    <!--------------------- Custom Stylesheet ----------------------->
+    
+    <link rel="stylesheet" href="{{ '/dist/main.css' | relative_url }}">
+
+ </head>
 
 
 <body>
+  <!--------------------- Insert Header ----------------------->
+
+
+
+  <!--------------------- Brand Colours ----------------------->
+
+   {% include default/inline-styles.html %}
+
+  <!--------------------- Body ----------------------->
+
     {{content}}
+
+  <!--------------------- Instagram Embed Widget ----------------------->
+
+  {% if site.data.site-settings.technical.instagram_widget_embed == nil %}
+
+  <section class="p-5 md:p-10">
+      <h4 class="title-sm"> <a target="_blank" href="https://www.instagram.com/{{site.data.site-settings.social.instagram_username}}"> {{ site.data.site-settings.social.instagram_username }} </a>
+
+      {{site.data.site-settings.technical.instagram_widget_embed }}
+
+  </section>
+
+  {% endif %}
+
+  <!--------------------- Insert Footer ----------------------->
+
 </body>
+
+
+  <!--------------------- Site Wide Javascript ----------------------->
 
   <!-- Add jQuery -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
-
 
   <!-- Custom javascript style -->
   <script src="/javascript/scripts.js" defer></script>

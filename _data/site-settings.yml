@@ -1,0 +1,35 @@
+general:
+  site-name: Your Website Name
+  form-email: hello@websitename.com
+  logo_path:
+  logo-max-width: 400px
+  logo-text: YOUR LOGO
+seo:
+  site_name: 
+  title:
+  type: website
+  description: 
+  keywords: 
+  social_image: /
+  author: 
+  twitter_card: summary
+  twitter_description: 
+social:
+  instagram_username: 
+  facebook_username:
+  twitter_username:
+  tiktok_username:
+  pinterest_username:
+  youtube_username:
+design:
+  accent_color:
+  dark_color:
+  medium_color:
+  light_color:
+  v-light_color:
+  dark-text_color:
+  medium-text_color:
+  light-text_color:
+technical:
+  google-analytics_embed:
+  instagram_widget_embed:
