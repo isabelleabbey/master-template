@@ -15,16 +15,13 @@
   }
 
   body {
-    @apply font-sans text-black font-light overflow-x-hidden bg-main;
+    @apply font-sans text-black font-light overflow-x-hidden;
   }
   
-  h1, h2, h3, h4, h5, h6 {
-      @apply font-serif font-light;
-  }
+  h1, h2, h3, h4, h5, h6 { @apply font-serif font-light; }
 
-  a {
-    @apply font-sans
-  }
+  .button    {  @apply inline-block p-6 bg-rose-100 text-white hover:bg-blue-800 transition;  }
+  .nav-items { @apply flex-row flex justify-around items-center uppercase font-light tracking-wide; }
 
 
 
@@ -50,3 +47,6 @@
   .bg-medium { background-color: var(--medium); }
   .bg-light { background-color: var(--light); }
   .v-light { background-color: var(--v-light); }
+
+
+
