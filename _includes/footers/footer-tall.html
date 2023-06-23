@@ -1,0 +1,26 @@
+    <!-- Footer -->
+    <footer class="grid md:grid-cols-2 grid-cols-1 md:p-10 p-8 border-black border-t">
+        <div class="flex items-end mb-12 md:mb-0">
+            <img src="{{site.data.site-settings.brand.primary_logo_path}}" alt="" class="md:mt-[10rem] lg:mt-0 md:h-24 h-16 object-center object-cover">
+        </div>
+
+        <div class="grid grid-cols-3">
+            <nav class="flex flex-col">
+                {% for item in site.data.navigation.footer %}
+                <a href="{{item.nav_url}}" class="mb-4 text-sm">{{item.nav_title}}</a>
+                {% endfor %}
+            </nav>
+            <p class="col-span-2 lg:w-[50%] text-xs">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae doloribus nam ipsum quidem fuga mollitia ratione libero dolore, officia quos atque ex quod blanditiis culpa natus rerum quam perspiciatis sequi.</p>
+
+
+            <!-- Copyright -->
+            <div class="col-span-full lg:col-span-full mt-12 lg:mt-[10rem] flex items-end md:justify-end justify-center">
+                <p class="text-[0.5rem]">Copyright Business Name, Website by <a href="https://klioh.com">Klioh Studio</a></p>
+            </div>
+            <!-- End copyright -->
+                
+        </div>
+
+        </div>
+
+    </footer>

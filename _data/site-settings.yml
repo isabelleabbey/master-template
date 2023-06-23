@@ -1,7 +1,7 @@
 general:
   site-name: Your Website Name
   form-email: hello@websitename.com
-  logo_path: /images/nevita-logo.png
+  logo_path: /images/brand_logo.png
   logo-max-width: 400px
   logo-text: YOUR LOGO
 seo:
@@ -27,6 +27,10 @@ design:
   medium_color:
   light_color:
   v-light_color: '#FFFFFF'
+brand:
+  primary_logo_path: /images/brand_logo.png
+  secondary_logo_path:
+  submark_logo_path:
 technical:
   google-analytics_embed:
   instagram_widget_embed:
