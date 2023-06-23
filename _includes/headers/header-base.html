@@ -1,0 +1,45 @@
+<header class="grid grid-cols-3 bg-main border-b border-green relative">
+
+  <div class="hidden lg:flex items-center justify-center justify-between">
+      <nav class="hidden lg:flex md:flex-row md:justify-center items-center">
+          {% for item in site.data.navigation.header limit:2 %}
+          <a href="{{item.nav_url}}" class="nav-items">{{item.nav_title}}</a>
+          {% endfor %}
+      </nav>
+  </div>
+
+  <div class="lg:col-span-1 col-span-2 p-2 lg:flex lg:justify-center lg:items-center">
+      <a href="/"><img src="/images/brand_logo.png" alt="" class="inline-block object-center object-contain mx-auto m-0 p-0 h-12"></a>
+  </div>
+
+<div class="hidden lg:flex items-center justify-center">
+      <nav class="hidden lg:flex md:flex-row md:justify-center md:items-center">
+          {% for item in site.data.navigation.header limit:2 offset:2 %}
+          <a href="{{item.nav_url}}" class="nav-items">{{item.nav_title}}</a>
+          {% endfor %}
+      </nav>
+  </div>
+
+
+
+<div class="flex items-center justify-end fixed top-10 right-0 z-[8000]">
+  <nav class="col-span-1 ml-auto grid grid-cols-2 relative">
+     <!-- <a href="#" class="p-2 absolute right-12 hidden md:flex">Menu</a> -->
+        <!-- Start burger -->
+          <div class="burger-button">
+              <span class="burger-top">
+                  <img src="/images/brand_logo.png" alt="" class="object-center object-cover md:mr-2 -mr-[0.5rem] p-0 h-10 fixed right-6 md:right-2 top-10 md:top-10">
+                  <span class="burger-cross cross-top"></span>
+                  <span class="burger-cross cross-bottom"></span>
+              </span>
+          </div>
+          <div class="burger-menu">
+              <a href="/">Home</a>
+              {% for item in site.data.navigation.header  %}
+              <a href="{{item.nav_url}}">{{item.nav_title}}</a>
+              {% endfor %} 
+              <a href="/contact">Contact</a>
+          </div>
+  </nav>
+</div>
+</header>

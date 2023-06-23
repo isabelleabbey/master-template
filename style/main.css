@@ -27,7 +27,6 @@
   }
 
 
-.text-accent {color:var(--accent); }
 
   .title-lg {   @apply font-serif text-2xl }
   .title-md {  @apply font-serif text-lg   }

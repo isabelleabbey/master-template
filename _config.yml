@@ -14,6 +14,15 @@ _select_data:
     text-white: Light Text
     text-black: Dark Text
 _inputs: 
+  text_html: 
+    type: html
+    options:
+      blockquote: false
+      bold: true
+      format: p h3 h4
+      link: true
+      italic: true
+      bulletedlist: true
   section_spacing:
     type: select
     options:
@@ -50,8 +59,6 @@ _array_structures:
       title: Text Block
       text_html: 
       column_count: 1
-      section_spacing:
-      section_colors:
   - label: Image Text Block
     icon: description
     value:
@@ -86,10 +93,9 @@ _array_structures:
       youtube_id:
       vimeo_id:
       autoplay: false
-      embedded_poster:
+      embedded_poster_path:
       embedded:
         - video_path:
-        - file_type:
 
   columns:
     - label: image

@@ -1,7 +1,7 @@
 general:
   site-name: Your Website Name
   form-email: hello@websitename.com
-  logo_path:
+  logo_path: /images/nevita-logo.png
   logo-max-width: 400px
   logo-text: YOUR LOGO
 seo:

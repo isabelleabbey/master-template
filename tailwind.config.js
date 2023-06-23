@@ -12,6 +12,18 @@ module.exports = {
       sans: ['Font Name', 'sans-serif'],
       body:  ['Font Name', 'sans-serif'],
     },
+    safelist: [
+      {
+         pattern: /grid-cols-.*/,
+         variants: ['lg, md, sm'],
+      },
+      { pattern: /col-span-.*/,
+        variants: ['lg, md, sm'],
+       },
+     { pattern: /columns-.*/,
+     variants: ['lg, md, sm'],
+       },
+      ],
     extend: {
       colors: {
         'main': '#fffff',
