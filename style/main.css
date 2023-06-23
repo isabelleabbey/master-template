@@ -15,7 +15,7 @@
   }
 
   body {
-    @apply font-sans text-white font-light overflow-x-hidden w-[100vw] bg-main;
+    @apply font-sans text-black font-light overflow-x-hidden bg-main;
   }
   
   h1, h2, h3, h4, h5, h6 {
@@ -25,3 +25,29 @@
   a {
     @apply font-sans
   }
+
+
+.text-accent {color:var(--accent); }
+
+  .title-lg {   @apply font-serif text-2xl }
+  .title-md {  @apply font-serif text-lg   }
+  .title-sm {  @apply font-serif text-base }
+  .title-xs {  @apply font-serif text-xs }
+
+  .text-nav { @apply font-sans uppercase tracking-wide text-v-light }
+  .text-base { @apply font-body text-black }
+
+
+  /* colours */
+  .text-accent {color:var(--accent); }
+  .text-dark {color:var(--dark); }
+  .text-medium {color:var(--medium); }
+  .text-light {color:var(--light); }
+  .text-v-light {color:var(--v-light); }
+
+
+  .bg-accent { background-color: var(--accent); }
+  .bg-dark { background-color: var(--dark); }
+  .bg-medium { background-color: var(--medium); }
+  .bg-light { background-color: var(--light); }
+  .v-light { background-color: var(--v-light); }

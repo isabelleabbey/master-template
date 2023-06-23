@@ -8,11 +8,13 @@ module.exports = {
   ],
   theme: {
     fontFamily: {
-      sans: ['font-name', 'sans-serif'],
+      serif: ['Font Name', 'serif'],
+      sans: ['Font Name', 'sans-serif'],
+      body:  ['Font Name', 'sans-serif'],
     },
     extend: {
       colors: {
-        'main': '#000',
+        'main': '#fffff',
       },
       aspectRatio: {
         'portrait': '3/4',

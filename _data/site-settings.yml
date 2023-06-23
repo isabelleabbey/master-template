@@ -22,14 +22,11 @@ social:
   pinterest_username:
   youtube_username:
 design:
-  accent_color:
+  accent_color: '#008000'
   dark_color:
   medium_color:
   light_color:
-  v-light_color:
-  dark-text_color:
-  medium-text_color:
-  light-text_color:
+  v-light_color: '#FFFFFF'
 technical:
   google-analytics_embed:
   instagram_widget_embed:
