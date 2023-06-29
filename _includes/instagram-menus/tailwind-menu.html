@@ -1,0 +1,85 @@
+---
+layout: insta-menu
+title: Site Name
+background_image: 
+buttons:
+  - title: Link 1
+    link: 
+  - title: Link 2
+    link: 
+  - title: Link 3
+    link: 
+  - title: Link 4
+    link:
+---
+
+
+<!-- Add background image in front matter above -->
+<section style="position:absolute; top:0; right:0; left:0; bottom: 0; background-image: url('{{page.background_image}}'); z-index: 1000;" class="grid grid-cols-1 flex justify-center items-center justify-items-center insta-menu bg-menu">
+
+  <!-- <div class="p-5 flex flex-col">
+    <img src="/" alt="" class="h-[40vh] aspect-square rounded-full object-center object-cover mx-auto editable" />
+  </div> -->
+
+  <!-- <div class="pb-5 pt-0 px-8 editable">
+    <p><span class="button">@instagramhandle</span></p>
+    <p class="mb-10">About client</p>
+    <p>More text about offerings</p>
+  </div> -->
+
+  <div class="grid grid-cols-1">
+    <nav>
+      {% for item in page.buttons %}
+     <a class="button-menu block mb-4" href="{{item.link}}">
+        <p class="text-xl">{{item.title}}</p>
+        <!-- <p class="mt-2 mb-0">{{item.subtitle}}</p> -->
+    </a>
+    {% endfor %}
+    </nav>
+  </div>
+</section>
+
+
+<style>
+    /* instagram menu */
+
+.insta-menu {
+  /* background-color: #FAF9F6; */
+  text-align: center;
+}
+
+/* Change font, colour and background colour of buttons */
+.button-menu {
+    font-family: 'scotch-text', 'serif';
+    color: black;
+    background-color: #fff;
+    /* border: 1px solid #fff; */
+    padding: 3% 5%;
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 300;
+    -webkit-appearance: none;
+    text-align: center;
+    width: 85vw;
+    -webkit-appearance: none;
+}
+
+/* change button hover colour and background colour */
+.button-menu:hover {
+    text-decoration: none;
+    color: #fff;
+    background-color: #000;
+}
+
+.bg-menu {
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+}
+
+@media (min-width: 1024px) {
+  .button-menu {
+    width: 50vw;
+  }
+}
+</style>

@@ -1,4 +1,4 @@
-<header class="grid grid-cols-3 bg-main border-b border-black relative">
+<header class="grid grid-cols-3 border-b border-black relative">
 
   <div class="hidden lg:grid">
   
@@ -7,7 +7,7 @@
   
         {% for item in site.data.navigation.header limit:2 %}
     
-            <a> {{item.nav_title}} </a>
+        <a href="{{item.nav_link}}">{{item.nav_title}}</a>
   
         {% endfor %}
   
@@ -27,7 +27,7 @@
   
         {% for item in site.data.navigation.header limit:2 offset:2 %}
 
-           <a> {{item.nav_title}} </a>
+          <a href="{{item.nav_link}}">{{item.nav_title}}</a>
   
         {% endfor %}
   
@@ -52,7 +52,7 @@
           <div class="burger-menu">
               <a href="/">Home</a>
               {% for item in site.data.navigation.header  %}
-              <a href="{{item.nav_url}}">{{item.nav_title}}</a>
+              <a href="{{item.nav_link}}">{{item.nav_title}}</a>
               {% endfor %} 
               <a href="/contact">Contact</a>
           </div>

@@ -6,7 +6,7 @@
         <nav class="nav-items ">
       
       {% for item in site.data.navigation.footer limit:2 %}
-        <a> {{item.nav_title}} </a>
+          <a href="{{item.nav_link}}" class="mb-4 text-sm">{{item.nav_title}}</a>
       {% endfor %}
         </nav>
       </div>
@@ -26,7 +26,7 @@
           <nav class="nav-items ">
         
         {% for item in site.data.navigation.footer limit:3 %}
-          <a> {{item.nav_title}} </a>
+        <a href="{{item.nav_link}}">{{item.nav_title}}</a>
         {% endfor %}
           </nav>
         </div>
@@ -39,7 +39,7 @@
           <nav class="nav-items ">
         
         {% for item in site.data.navigation.footer limit:2 offset:2 %}
-          <a> {{item.nav_title}} </a>
+            <a href="{{item.nav_link}}">{{item.nav_title}}</a>
         {% endfor %}
           </nav>
         </div>
@@ -55,7 +55,7 @@
 
 
     <div class="col-span-full text-center mb-4">
-        <span class="text-[0.6rem] text-white">© <span id="year"></span> The Well Gang. All Rights Reserved. <br class="md:hidden"> Website by <a class="underline" href="https://klioh.com">Klioh Studio</a>
+        <span class="text-[0.6rem] text-white">© <span id="year"></span> Company Name. All Rights Reserved. <br class="md:hidden"> Website by <a class="underline" href="https://klioh.com">Klioh Studio</a>
         </span>
     </div>
 

@@ -12,9 +12,11 @@
 
 
 
-  *{
+  /* *{
     border: 1px solid black;
-  }
+  } */
+  
+  
   html {
     scroll-behavior: smooth;
   }
@@ -52,5 +54,6 @@
 
   /* buttons and navs */
 
-  .button    {  @apply inline-block p-6 bg-accent text-light hover:bg-medium transition;  }
+  .button    {  @apply inline-block p-6 bg-accent text-light transition;  }
+  .button:hover { @apply bg-medium }
   .nav-items {  @apply flex justify-around items-center uppercase font-light tracking-wide; }

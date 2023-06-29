@@ -10,16 +10,17 @@ seo:
   type: website
   description: 
   keywords: 
-  social_image: /
+  social_image:
   author: 
   twitter_card: summary
   twitter_description: 
 social:
-  instagram_username: 
+  instagram_username:
   facebook_username:
-  twitter_username:
-  tiktok_username:
   pinterest_username:
+  linkedin_username:
+  twitter_username: 
+  tiktok_username: 
   youtube_username:
 design:
   accent_color: '#008000'

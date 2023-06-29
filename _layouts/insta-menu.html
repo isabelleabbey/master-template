@@ -37,9 +37,6 @@
 
     {{site.data.site-settings.technical.google-analytics_embed}}
 
-  <!--------------------- Font Awesome Version 6 for icons ----------------------->
-    <script src="https://kit.fontawesome.com/5ecc7ac9fc.js" crossorigin="anonymous"></script>
-
     <!--------------------- Custom Stylesheet ----------------------->
     
     <link rel="stylesheet" href="{{ '/dist/main.css' | relative_url }}">
@@ -48,14 +45,7 @@
 
 
 <body>
-  <!--------------------- Insert Desktop Header ----------------------->
 
-  <!-- desktop -->
-
-  {% include headers/header-base.html %}
-
-  <!-- mobile -->
-  {% include headers/burger-base.html %}
 
   <!--------------------- Brand Colours ----------------------->
 
@@ -65,33 +55,6 @@
 
     {{content}}
 
-  <!--------------------- Instagram Embed Widget ----------------------->
 
-  {% if site.data.site-settings.technical.instagram_widget_embed == nil %}
-
-  <section class="p-5 md:p-10">
-      <h4 class="title-sm"> <a target="_blank" href="https://www.instagram.com/{{site.data.site-settings.social.instagram_username}}"> {{ site.data.site-settings.social.instagram_username }} </a>
-
-      {{site.data.site-settings.technical.instagram_widget_embed }}
-
-  </section>
-
-  {% endif %}
-
-  <!--------------------- Insert Footer ----------------------->
-
-
-  {% include footers/logo-center.html %}
-
-</body>
-
-
-  <!--------------------- Site Wide Javascript ----------------------->
-
-  <!-- Add jQuery -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
-
-  <!-- Custom javascript style -->
-  <script src="/javascript/scripts.js" defer></script>
 
 </html>
