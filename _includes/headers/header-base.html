@@ -35,27 +35,4 @@
     </div>
   
   </div>
-
-
-
-<div class="flex items-center justify-end fixed top-10 right-0 z-[8000]">
-  <nav class="col-span-1 ml-auto grid grid-cols-2 relative">
-     <!-- <a href="#" class="p-2 absolute right-12 hidden md:flex">Menu</a> -->
-        <!-- Start burger -->
-          <div class="burger-button">
-              <span class="burger-top">
-                  <img src="/images/nevita-icon-01.png" alt="" class="object-center object-cover md:mr-2 -mr-[0.5rem] p-0 h-10 fixed right-6 md:right-2 top-10 md:top-10">
-                  <span class="burger-cross cross-top"></span>
-                  <span class="burger-cross cross-bottom"></span>
-              </span>
-          </div>
-          <div class="burger-menu">
-              <a href="/">Home</a>
-              {% for item in site.data.navigation.header  %}
-              <a href="{{item.nav_link}}">{{item.nav_title}}</a>
-              {% endfor %} 
-              <a href="/contact">Contact</a>
-          </div>
-  </nav>
-</div>
 </header>

@@ -6,7 +6,7 @@
         <nav class="nav-items ">
       
       {% for item in site.data.navigation.footer limit:2 %}
-          <a href="{{item.nav_link}}" class="mb-4 text-sm">{{item.nav_title}}</a>
+          <a href="{{item.nav_link}}" class="text-sm">{{item.nav_title}}</a>
       {% endfor %}
         </nav>
       </div>
@@ -26,7 +26,7 @@
           <nav class="nav-items ">
         
         {% for item in site.data.navigation.footer limit:3 %}
-        <a href="{{item.nav_link}}">{{item.nav_title}}</a>
+        <a href="{{item.nav_link}}" class="text-sm">{{item.nav_title}}</a>
         {% endfor %}
           </nav>
         </div>
@@ -36,10 +36,10 @@
 
       <div class="hidden lg:grid">
         <div class="text-center grid min-h-[5vh]">
-          <nav class="nav-items ">
+          <nav class="nav-items">
         
         {% for item in site.data.navigation.footer limit:2 offset:2 %}
-            <a href="{{item.nav_link}}">{{item.nav_title}}</a>
+            <a href="{{item.nav_link}}" class="text-sm">{{item.nav_title}}</a>
         {% endfor %}
           </nav>
         </div>
