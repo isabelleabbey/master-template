@@ -12,7 +12,7 @@
 
     {% if block.autoplay == true %}
     <iframe
-    src="https://www.youtube.com/embed/{{block.youtube_id}}?origin=https://plyr.io&amp;muted=1&autoplay=1&amp;loop=1&amp;iv_load_policy=3&amp;modestbranding=1&amp;playsinline=1&amp;showinfo=0&amp;rel=0&amp;enablejsapi=1"
+    src="https://www.youtube.com/embed/{{block.youtube_id}}?&autoplay=1origin=https://plyr.io&amp;muted=1&autoplay=1&amp;loop=1&amp;iv_load_policy=3&amp;modestbranding=1&amp;playsinline=1&amp;showinfo=0&amp;rel=0&amp;enablejsapi=1"
     allowfullscreen
     allowtransparency
     allow="autoplay"
@@ -60,7 +60,7 @@
   <video class="js-player" playsinline controls  muted autoplay autobuffer="true" preload="auto" loop data-poster="{{ block.embedded_poster }}">
     
     {% for item in block.embedded %}
-    <source src="{{ item.video_path }}" type="video/{{ item.file_type }}" />
+    <source src="{{ item.video_path }}" type="video/mp4" />
   
     {% endfor %}
     <!-- Captions are optional -->
@@ -71,7 +71,7 @@
 <video class="js-player" playsinline controls autobuffer="true" preload="auto" loop data-poster="{{ block.embedded_poster }}">
     
   {% for item in block.embedded %}
-  <source src="{{ item.video_path }}" type="video/{{ item.file_type }}" />
+  <source src="{{ item.video_path }}" type="video/mp4" />
 
   {% endfor %}
   <!-- Captions are optional -->

@@ -1,9 +1,20 @@
-<section class="p-10 mt-2 mb-2{{ block.section_colors | join: ' ' }} {{ block.section_spacing }}">
+<section class="p-10 md:p-14 text-{{ block.text_align }} {{ block.section_spacing }} {{ block.section_color }}">
 
-  <div class="md:columns-{{ block.column_count }}">
-    {{ block.text_html }}
+
+  {% if block.title %}
+  <div class="">
+    <h3 class="text-xl mb-4 text-{{ block.title_align }}"> {{ block.title }} </h3>
   </div>
 
+  <div class="md:columns-{{ block.column_count }}">
+    <p> {{ block.text_html }}</p>
+   </div>
+  {% else %}
+
+  <div class="md:columns-{{ block.column_count }}">
+   <p> {{ block.text_html }}</p>
+  </div>
+{% endif %}
 
 </section>
 

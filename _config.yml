@@ -7,7 +7,6 @@ _select_data:
   video_types:
   - vimeo
   - youtube
-  - embedded
   section_colors:
     bg-light: Light Background
     bg-dark: Dark Background
@@ -29,12 +28,14 @@ _inputs:
       values: 
         p-5: Padded SM
         p-10: Padded MD
+        p-20: Padded LG
   column_type:
     type: select
     options:
       values: 
         p-5: Padded SM
         p-10: Padded MD
+        p-20: Padded LG
 page_blocks: []
 _array_structures:
   page_blocks: 
@@ -56,9 +57,13 @@ _array_structures:
     icon: description
     value:
       _id: text
+      text_align: left
+      title_align: left
       title: Text Block
       text_html: 
       column_count: 1
+      section_spacing:
+      section_color:
   - label: Image Text Block
     icon: description
     value:
@@ -92,11 +97,7 @@ _array_structures:
       video_type:
       youtube_id:
       vimeo_id:
-      autoplay: false
-      embedded_poster_path:
-      embedded:
-        - video_path:
-
+      autoplay: true
   columns:
     - label: image
       icon: photo_camera
