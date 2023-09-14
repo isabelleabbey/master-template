@@ -1,5 +1,5 @@
 
-<div class="gallery grid md:grid-cols-{{ block.gallery_column_count}} gap-2">
+<div class="gallery grid md:grid-cols-{{ block.gallery_column_count}} gap-2 {{ block.section_spacing }}">
     {% for item in block.gallery %}
 
         <div class="col-span-{{item.column-width}}">

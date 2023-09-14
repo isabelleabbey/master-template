@@ -26,16 +26,9 @@ _inputs:
     type: select
     options:
       values: 
-        p-5 md:p-10: Padded SM
-        p-10: Padded MD
-        p-10 md:p-20: Padded LG
-  column_type:
-    type: select
-    options:
-      values: 
-        p-5: Padded SM
-        p-10: Padded MD
-        p-20: Padded LG
+        p-5 md:p-10: Padded XS
+        p-10 md:p-20: Padded
+        px-10 py-16 md:py-32 md:px-28: Padded XL
 page_blocks: []
 _array_structures:
   page_blocks: 
@@ -63,7 +56,6 @@ _array_structures:
       text_html: 
       column_count: 1
       section_spacing:
-      section_color:
   - label: Image Text Block
     icon: description
     value:
@@ -71,6 +63,7 @@ _array_structures:
       title: Image Text Block
       column_count: 2
       columns:
+      section_spacing:
   - label: Image Collage
     icon: photo_camera
     value:
@@ -81,6 +74,7 @@ _array_structures:
         - image: 
         - column-width: 
         - aspect-ratio: 
+      section_spacing:
   - label: Masonry Collage
     icon: photo_camera
     value:
@@ -89,6 +83,7 @@ _array_structures:
       column_count: 3
       images:
         - image: 
+      section_spacing:
   - label: Video
     icon: play_circle
     value:
@@ -98,6 +93,7 @@ _array_structures:
       youtube_id:
       vimeo_id:
       autoplay: true
+      section_spacing:
   columns:
     - label: image
       icon: photo_camera
