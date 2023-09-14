@@ -26,9 +26,9 @@ _inputs:
     type: select
     options:
       values: 
-        p-5: Padded SM
+        p-5 md:p-10: Padded SM
         p-10: Padded MD
-        p-20: Padded LG
+        p-10 md:p-20: Padded LG
   column_type:
     type: select
     options:
