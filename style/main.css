@@ -54,6 +54,8 @@
 
   /* buttons and navs */
 
-  .button    {  @apply inline-block p-6 bg-accent text-light transition;  }
+  .button    { @apply inline-block p-6 bg-accent text-light transition;  }
   .button:hover { @apply bg-medium }
-  .nav-items {  @apply flex justify-around items-center uppercase font-light tracking-wide; }
+  .nav-items { @apply flex justify-around items-center uppercase font-light tracking-wide; }
+
+  .nav-items-col { @apply flex flex-col uppercase tracking-wide }
