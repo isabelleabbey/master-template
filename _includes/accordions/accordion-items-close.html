@@ -1,0 +1,41 @@
+<!------------------------- Add to front matter ----------------------->
+<!-- accordion:
+   -
+      question: >-
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vitae, excepturi illum consectetur sit libero quas porro, repellat illo eius officiis alias, reprehenderit nostrum magni quia. Reiciendis enim suscipit quisquam temporibus.
+      answer: >-
+         Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa mollitia suscipit maxime, eius est aut natus accusantium explicabo dignissimos. Labore, magnam consectetur. Nam dicta atque illo distinctio cupiditate beatae architecto?
+   -
+      question: >-
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vitae, excepturi illum consectetur sit libero quas porro, repellat illo eius officiis alias, reprehenderit nostrum magni quia. Reiciendis enim suscipit quisquam temporibus.
+      answer: >-
+         Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa mollitia suscipit maxime, eius est aut natus accusantium explicabo dignissimos. Labore, magnam consectetur. Nam dicta atque illo distinctio cupiditate beatae architecto? -->
+
+
+
+  <!-- Closes previous accordion item when opening the next -->
+
+  <div class="md:p-20 p-10">
+      
+      <div id="accordion-collapse" data-accordion="collapse">
+          {% for item in page.accordion %}
+          <h2 id="accordion-collapse-heading-{{ forloop.index }}" class="mb-0">
+            <button type="button" class="flex items-center justify-between w-full p-5 subtitle text-left border last:border-b border-b-0 border-gray-600 hover:bg-[#999]" data-accordion-target="#accordion-collapse-body-{{ forloop.index }}" aria-expanded="false"  aria-controls="accordion-collapse-body-{{ forloop.index }}">
+              <span>{{item.question}}</span>
+              <!-- <img src='/images/plus-icon.svg' class="plus-icon"> -->
+              <svg data-accordion-icon class="w-6 h-6 rotate-180 shrink-0" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" /></svg>
+            </button>
+          </h2>
+      
+          <div id="accordion-collapse-body-{{ forloop.index }}" class="hidden" aria-labelledby="accordion-collapse-heading-{{ forloop.index }}">
+            <div class="p-5 border border-b-0 last:border-b border-gray-600">
+              <p class="mb-2">{{item.answer}}</p>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+  </div>
+
+
+<!-- Flobite scripts -->
+<script src="https://unpkg.com/flowbite@1.5.1/dist/flowbite.js" defer></script>

@@ -1,0 +1,85 @@
+---
+layout: default
+page_blocks:
+  - _id: text
+    text_align: left
+    title_align: center
+    title: Title
+    image: /images/image_two.jpg
+    text_html: >-
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque magni
+      amet cum mollitia labore nobis, reiciendis repellendus repudiandae
+      molestiae eum laborum tempore, fuga deserunt necessitatibus dolores
+      delectus. Enim, non beatae! Lorem ipsum dolor sit amet consectetur
+      adipisicing elit. Cupiditate vitae ea dolore, eveniet quibusdam molestias
+      necessitatibus ut perferendis. Totam ratione consequuntur unde voluptates
+      repellendus itaque accusantium ea quam iusto obcaecati.</p>
+    column_count: 2
+    section_spacing: p-10 md:p-20
+  - _id: cta
+    title: Call To Action
+    cta_title: Im a CTA
+    cta_text: LOREMEOMREOMREOMR
+    cta_url:
+    cta_button-text: BUTTON
+  - _id: video
+    video_type: vimeo
+    youtube_id: 4jqp9PM8QFA?si=FFvngvjv-RbhxGbx
+    vimeo_id: 843156519?h=83d2c20b64
+    autoplay: true
+  - _id: masonry_collage
+    title: Masonry Collage
+    column_count: 4
+    images:
+      - image: /images/photo-1.jpg
+      - image: /images/photo-1.jpg
+      - image: /images/photo-1.jpg
+      - image: /images/photo-1.jpg
+      - image: /images/photo-1.jpg
+      - image: /images/photo-1.jpg
+      - image: /images/photo-1.jpg
+      - image: /images/photo-1.jpg
+  - _id: image-text
+    title: Image Text Block
+    column_count: '2'
+    columns:
+      - _type: image
+        image: /images/photo-1.jpg
+        column_width: 1
+      - _type: text
+        text_html: >-
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
+          vehicula fringilla felis, a placerat magna pretium vel. Morbi ut
+          tincidunt ligula. Curabitur sed scelerisque justo. Donec vehicula
+          elementum dui non molestie. Phasellus varius scelerisque felis vitae
+          fringilla. Vestibulum ante ipsum primis in faucibus orci luctus et
+          ultrices posuere cubilia curae; Nunc justo risus, bibendum et
+          elementum vel, fringilla nec nisl. Nam varius odio eu eros
+          pellentesque, quis faucibus dolor viverra. Mauris ut eros placerat,
+          sodales libero eu, sodales mi. Class aptent taciti sociosqu ad litora
+          torquent per conubia nostra, per inceptos himenaeos. Etiam ultricies
+          justo eu fermentum rhoncus.</p><p>Pellentesque nec ipsum maximus,
+          varius leo sit amet, pulvinar nunc. Cras vitae gravida sem, vel mattis
+          lorem. Maecenas eu ipsum tincidunt, congue sem ut, fringilla turpis.
+          Nulla quis congue metus, at vulputate turpis. In in ligula a turpis
+          dictum porta. Nunc bibendum lacus nec quam molestie elementum. Mauris
+          at ante eget turpis consequat egestas.</p><p>Quisque arcu nisl,
+          iaculis at consequat id, facilisis in tortor. Fusce blandit pretium
+          est, in suscipit tortor euismod id. Ut vehicula risus ut finibus
+          cursus. Ut dui ligula, malesuada maximus porta at, pellentesque sed
+          purus. Quisque blandit tristique sapien, non viverra magna aliquam a.
+          Proin congue eros at tempor rutrum. Integer ac purus vel ante tempus
+          cursus. </p>
+        column_width: 1
+---
+<!-- you need to create a section with classes in order for them to work in the foreloop for the client (if they dont exist anywhere on the site they wont work!) -->
+<div class="md:columns-3 md:columns-2 md:columns-4">
+</div>
+
+{% for block in page.page_blocks %}
+     {% include /blocks/{{block._id}}.html %}
+{% endfor %}
+
+
+
+

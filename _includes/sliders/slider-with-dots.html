@@ -1,0 +1,96 @@
+<!------------------------- Add to front matter ----------------------->
+<!-- slider-items:
+ - review: Lorem, ipsum dolor sit amet consectetur adipisicing elit. Exercitationem hic dolorum dignissimos accusantium. Velit deserunt aut dolore, fugit quis, earum vel labore rem dolorem quaerat, corporis mollitia dignissimos quia commodi?
+   reviewer: Lorem ipsum
+ - review: Lorem, ipsum dolor sit amet consectetur adipisicing elit. Exercitationem hic dolorum dignissimos accusantium. Velit deserunt aut dolore, fugit quis, earum vel labore rem dolorem quaerat, corporis mollitia dignissimos quia commodi?
+   reviewer: Lorem ipsum    
+ - review: Lorem, ipsum dolor sit amet consectetur adipisicing elit. Exercitationem hic dolorum dignissimos accusantium. Velit deserunt aut dolore, fugit quis, earum vel labore rem dolorem quaerat, corporis mollitia dignissimos quia commodi?
+   reviewer: Lorem ipsum
+ - review: Lorem, ipsum dolor sit amet consectetur adipisicing elit. Exercitationem hic dolorum dignissimos accusantium. Velit deserunt aut dolore, fugit quis, earum vel labore rem dolorem quaerat, corporis mollitia dignissimos quia commodi?
+   reviewer: Lorem ipsum -->
+
+<!-- Swiper CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+
+<!-- Slider main container -->
+<div class="swiper">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+      <!-- Slides -->
+      {% for item in page.slider-items %}
+      <div class="swiper-slide">
+          <div class="content px-10">
+              <div class="bg-center bg-contain bg-no-repeat lg:h-[50vh] aspect-portrait" style="background-image:url('{{item.image}}')">
+              </div>
+              <h4 class="mt-6 mb-4">{{item.review}}</h4>
+              <p class="mb-4">{{item.reviewer}}</p>
+              <a href="{{item.url}}" class="btn">Shop Now</a>
+          </div>
+      </div>
+      {% endfor %}
+    </div>
+  
+    <!-- Dots below content -->
+    <div class="swiper-pagination"></div>
+  </div>
+</div>
+  </section>
+
+
+
+<style>
+.swiper {
+    max-width: 100%;
+    margin: 0 auto;
+    height: 100%;
+}
+
+.swiper-wrapper {
+    width: 100%;
+    height: 100%;
+}
+
+.content {
+    padding-bottom: 3rem;
+}
+
+/* Change the colour of the active dot */
+.swiper-pagination-bullet-active {
+  background: black;
+}
+
+</style>
+
+
+  <script>
+    var swiper = new Swiper(".swiper", {
+      slidesPerView: 1,
+      spaceBetween: 30,
+      direction: 'horizontal',
+      loop: false,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      breakpoints: {
+        640: {
+          slidesPerView: 2,
+          spaceBetween: 10,
+        },
+        768: {
+          slidesPerView: 3,
+          spaceBetween: 20,
+        },
+        1024: {
+          slidesPerView: 4,
+          spaceBetween: 30,
+        },
+      },
+      mousewheel: {
+          forceToAxis: true,
+      },
+    });
+  </script>
