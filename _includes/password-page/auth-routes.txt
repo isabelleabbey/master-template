@@ -1,2 +1,0 @@
-/members/home.html
-/members/*
