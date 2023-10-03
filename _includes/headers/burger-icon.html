@@ -1,0 +1,242 @@
+
+    <div class="fixed top-10 right-0 z-50">
+        <nav class="col-span-1 ml-auto grid grid-cols-2 relative">
+            <!-- Start burger -->
+            <div class="burger-button">
+                <span class="burger-top">
+                    <img src="/images/burger-icon.png" alt="" class="object-center object-cover md:mr-2 -mr-[0.5rem] p-0 h-10 fixed left-6 md:left-3 top-6 md:top-10">
+                    <span class="burger-cross cross-top"></span>
+                    <span class="burger-cross cross-bottom"></span>
+                </span>
+            </div>
+            <div class="burger-thing"></div>
+            <div class="burger-menu">
+                <div class="flex justify-end items-end mt-4">
+                    {% for item in site.data.navigation.header %}
+                    <a href="{{item.nav_url}}" class="mx-4">{{item.nav_title}}</a> 
+                    {% endfor %}
+                </div>
+                <div class="flex flex-col justify-center mt-10 border-b border-black">
+                    {% for item in site.data.navigation.header %}
+                    <a href="{{item.nav_url}}" class="p-[2rem_0]">{{item.nav_title}}</a>
+                    {% endfor %} 
+                </div>
+                <div class="grid grid-cols-2 mt-8">
+                    {% for item in site.data.navigation.header %}
+                    <a href="{{item.nav_url}}" class="mb-4">{{item.nav_title}}</a>
+                    {% endfor %} 
+                </div>
+            </div>
+            <!-- End burger -->
+        </nav>
+    </div> 
+<style>
+
+.burger-thing {
+    opacity: 0;
+    background-color: #707070a1;
+    top:0;
+    right: 0;
+    bottom:0;
+    left:0;
+    position: fixed;
+    transition-duration: 1s;
+  }
+    
+.burger-thing.active {
+    opacity: 1;
+    background-color: #707070a1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    position: fixed;
+  }
+
+  .burger-button {
+    position:fixed;
+    top: 2.2rem;
+    left: 1.2rem;
+    z-index: 120000;
+    padding: 8px;
+  }
+
+  /* Use this option if using an icon */
+  .burger-button span {
+    display: block;
+    transition: 1s;
+    z-index: 110000;
+  }
+
+/* Use this option if using standard burger button, and comment out above */
+  /* .burger-button span {
+    width: 5px;
+    border: 10px solid white;
+    border-radius: 200px;
+    background-color: white;
+    display: block;
+    transition: 1s;
+    z-index: 110000;
+  } */
+  
+  .burger-button.active span{
+      display: block;
+      z-index: 102000;
+  }
+
+  
+  .burger-button .burger-top .burger-cross {
+    background-color: #222;
+      border-color: #222;
+      width: 15px;
+      border-radius: 2px;
+      height: 2px;
+      opacity: 0;
+      transition: opacity 0.5s;
+  }
+  
+  .burger-button.active .burger-top .burger-cross {
+      opacity: 1;
+  }
+  
+  .burger-button .burger-top .burger-cross.cross-top {
+    transform: translate(0px) translateY(-0.5px) rotate(46deg);
+  }
+  
+  .burger-button .burger-top .burger-cross.cross-bottom {
+    transform: translate(0px) translateY(-2.5px) rotate(134deg);
+  }
+  
+  .burger-menu {
+    /* Change background colour, leave the rest */
+    background-color: #555;
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    top: -100vh;
+    right: 0;
+    bottom: 0;
+    padding: 0 2.5rem;
+    box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.1);
+    z-index: 101000;
+    transition:1s;
+    flex-direction:column;
+  }
+
+  .burger-menu a {
+    /* Change font, colour, size of burger menu links */
+    font-family: sans-serif;
+    color: black;
+    text-transform: uppercase;
+    font-size: 0.875rem;
+    letter-spacing: 0.100em;
+    font-weight: 200;
+    text-decoration: none;
+    display:block;
+    text-align:left;
+    white-space:nowrap;
+    opacity: 0;
+    transition: opacity 0.5s linear 1s, color 0.1s;
+  }
+
+  .burger-menu a:hover {
+    color: white;
+  }
+  
+  .burger-menu.active{
+      top: 0;
+  }
+  
+  @keyframes menu-text {
+      from { opacity: 0; }
+      to { opacity: 1; }
+  }
+  
+  .burger-menu.active a {
+    transition: opacity 2s linear 1s, color 0.1s;
+      opacity: 1;
+  }
+
+  .burger-button.active img {
+      transition: all 2s;
+      opacity: 0;
+  }
+
+
+
+  /* ipad screens */
+  @media (min-width: 768px) {
+
+    /* Change position of burger button */
+    .burger-button {
+      top: 3.2rem;
+      right: 1.2rem;
+    }
+
+    /* Change position of burger menu, slides from right */
+    .burger-menu {
+    height: 100vh;
+    width: 50vw;
+    left: -100vh;
+    top: 0;
+    bottom: 0;
+  }
+
+  .burger-menu.active {
+    left: 0;
+}
+  }
+
+  /* desktop screens */
+  @media (min-width: 1024px) {
+    /* .burger-button {
+      display: none;
+    } */
+
+    /* Change position of burger menu, slides from right */
+    .burger-menu {
+    right: -100vh;
+    height: 100vh;
+    width: 45vw;
+  }
+  }
+
+  .burger-thing {
+    opacity: 0;
+    background-color: #707070a1;
+    top:0;
+    right: 0;
+    bottom:0;
+    left:0;
+    position: fixed;
+    transition-duration: 1s;
+  }
+    
+.burger-thing.active {
+    opacity: 1;
+    background-color: #707070a1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    position: fixed;
+  }
+
+</style>
+
+<script>
+  $(document).ready(function(){  
+    $(".burger-button").click(function(){
+    $(".burger-button").toggleClass("active");
+    $(".burger-menu").toggleClass("active");
+    });
+  });
+
+  var opacity = document.classSelector("burger-thing");
+
+function clickToggle(){
+   this.classList.toggle("active")
+}
+
+opacity.addEventListener("click",clickToggle, false);
+</script>
