@@ -1,0 +1,90 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+
+
+<script>
+$(document).ready(function(){
+
+var allPanels = $('.accordion > dd').hide();
+
+$('.accordion > dt > a').click(function() {
+
+ allPanels.slideUp();
+
+ $(this).filter('.open').removeClass('open').addClass('closing')
+ $('.accordion > dt > a').removeClass('open');
+ $(this).not(".closing").addClass('open').parent().next().slideDown();
+ $('.accordion > dt > a').removeClass('closing');
+
+ return false;
+});
+
+
+});
+
+</script>
+
+<style>
+/* Accordian slides */
+
+.accordion dt a {
+  padding: 2rem;
+  margin: 2rem 0;
+  display:block;
+  color: black;
+  font-family: 'gaultier', sans-serif;
+  text-transform: uppercase;
+  position: relative;
+  text-decoration: none;
+  font-size: 1.1rem;
+  border: 1px solid white;
+}
+.accordion dd {
+    padding: 1rem;
+    border: 1px solid white;
+    color: black;
+    font-family: 'halyard-display', sans-serif;
+    font-size: 1rem;
+    font-weight: 200;
+    color: black;
+}
+
+/* Icon */
+.accordion dt a::after {
+  position: absolute;
+  top: 0.4rem;
+  right: 0.4rem;
+  display: block;
+  width: 1rem;
+  height: 1rem;
+  line-height: 1;
+  text-align: center;
+  -webkit-transition: all .35s;
+  -o-transition: all .35s;
+  transition: all .35s;
+}
+
+/* NEED DANIELs HELP to stop auto popping back open, and make the thing twist */
+.accordion dt a::after {
+  content: "+";
+  padding: 2rem 1rem;
+  /* font-size: 1.5rem; */
+}
+.open::after {
+  transform: rotateZ(45deg);
+}
+</style>
+
+
+
+<div>
+    <dl class="accordion light-bg">
+  
+      {% for item in page.faqs %}
+  
+      <dt class="bg-blue"><a href="">{{item.question}}</a></dt>
+      <dd> {{item.answer}}</dd>
+  
+      {% endfor %}
+
+    </dl>
+</div>
